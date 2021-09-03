@@ -265,6 +265,108 @@ For example, if you have a function called computeTemperature() and you want to 
     }
     ```
 
+### **Aritmatic and Formulas**
+
+You can use Arduino to make complex calculations using a special syntax. + and – work like you’ve learned in school, and multiplication is represented with an * and division with a /. There is an additional operator called “modulo” (%), which returns the remainder of an integer division.
+
+```c
+a =  2 + 2; 
+light = ((12 * sensorValue) - 5 ) / 2;
+remainder = 3 % 2; // returns 1
+```
+
+### **Comparison Operators**
+
+When you specify conditions or tests for if, while, and for statements, these are the operators you can use:
+- ( == )  equal to
+- ( != )  not equal to
+- ( < )  less than
+- ( > )  greater than
+- ( <= )  less than or equal to
+- ( >= )  greater than or equal to
+
+### **Boolean Operators**
+These are used when you want to combine multiple conditions. For example, if you want to check whether the value coming from a sensor is between 5 and 10, you would write:
+
+```c
+if ((sensor => 5) && (sensor <=10))
+```
+
+There are three operators: and, represented with &&; or, represented with ||; and finally not, represented with !.
+
+### **Compound Operators**
+
+These are special operators used to make code more concise for some very common operations like incrementing a value.
+
+- **increment and decrement (–– and ++)**
+
+    These increment or decrement a value by 1. Be careful: if you write i++ this increments i by 1 and evaluates to the equivalent of i+1; ++i evaluates to the value of i and then increments i. The same applies to ––.
+
+- **(+= , –=, *= and /=)***
+
+    These make it shorter to write certain expressions. The following two expressions are equivalent:
+
+    ```
+    a = a + 5;
+    a += 5;
+    ```
+
+### **Input and Output Function**
+
+Arduino includes functions for handling input and output. You’ve already seen some of these in the example programs throughout the book.
+
+- **pinMode(pin, mode)**
+    
+    Reconfigures a digital pin to behave either as an input or an output.
+    ```c
+    pinMode(7,INPUT); // turns pin 7 into an input
+    ```
+
+- **digitalWrite(pin, value)**
+
+    Turns a digital pin either on or off. Pins must be explicitly made into an output using pinMode before digitalWrite will have any effect.
+    ```c
+    digitalWrite(8,HIGH); // turns on digital pin 8
+    ```
+
+- **int digitalRead(pin)**
+
+    Reads the state of an input pin, returns HIGH if the pin senses some voltage or LOW if there is no voltage applied.
+    ```
+    val = digitalRead(7); // reads pin 7 into val
+    ```
+
+- **int analogRead(pin)**
+
+    Reads the voltage applied to an analog input pin and returns a number between 0 and 1023 that represents the voltages between 0 and 5 V.
+    ```
+    val = analogRead(0); // reads analog input 0 into val
+    ```
+
+- **analogWrite(pin, value)**
+
+    Changes the PWM rate on one of the pins marked PWM. pin may be 11,10,9, 6, 5, 3. value may be a number between 0 and 255 that represents the scale between 0 and 5 V output voltage.
+    ```c
+    analogWrite(9,128); // Dim an LED on pin 9 to 50%
+    ```
+
+- **shiftOut(dataPin, clockPin, bitOrder, value)**
+
+    Sends data to a shift register, devices that are used to expand the number of digital outputs. This protocol uses one pin for data and one for clock. bitOrder indicates the ordering of bytes (least significant or most significant) and value is the actual byte to be sent out.
+
+    ```c
+    shiftOut(dataPin, clockPin, LSBFIRST, 255);  
+    ```
+- **unsigned long pulseIn(pin, value)**
+
+    Measures the duration of a pulse coming in on one of the digital inputs.This is useful, for example, to read some infrared sensors or accelerometers that output their value as pulses of changing duration.
+    ```c
+    time = pulsein(7,HIGH); // measures the time the next
+                            // pulse stays high
+    ```
+
+<br />
+
 ## **Book Reference**
 
 - C Programming for Arduino [Here you can buy](https://www.amazon.com/C-Programming-Arduino-Julien-Bayle/dp/1849517584).
