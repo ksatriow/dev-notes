@@ -4,6 +4,7 @@ Microservices - Cheat sheet
 Based on [Microservices presentation](https://www.youtube.com/watch?v=wgdBVIX9ifA) by Martin Fowler recorded at GOTO Berlin 2014.
 
 # Common caracteristics
+
 1. Components (= independently upgradable, replaçable) communicating through services (instead of libs for monoliths)
 2. Organized around business capabilities
 3. Smart endpoints and dumb pipes
@@ -29,21 +30,21 @@ Based on [Microservices presentation](https://www.youtube.com/watch?v=wgdBVIX9if
 # Monolith vs MicroService
 
 ## Monolith
+
 * Simplicity
 * Consistence
 * Inter-module refactoring
 
 ## Microservice
+
 * Partial deployment
 * Avaibility (If A Microservice fails, users still can use a fonctionnality managed by B, with a design for failure)
 * Preserve modularity
 * Platform / Technology best suited
 
 # Prerequisites
+
 * Rapid provisioning (rapid environment set-up)
 * Basic monitoring
 * Rapid applications deployment
 * Devops culture
-
-# Links
-[Microservices - Martin Fowler](https://www.youtube.com/watch?v=wgdBVIX9ifA)

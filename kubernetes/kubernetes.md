@@ -1,13 +1,4 @@
-
-# Docker
-https://docs.docker.com/engine/release-notes/
-```shell
-# latest version supported by Kubernetes, as of Nov 2018
-17.12.1~ce-0~ubuntu
-```
-
-# Kubernetes
-https://kubernetes.io/docs/setup/release/notes/
+# **Kubernetes**
 
 ```shell
 sudo su -
@@ -53,8 +44,8 @@ kubeadm join --token $TOKEN $LOCAL_IP:6443 \
 kubectl get nodes
 ```
 
-
 ##### run a container, verify
+
 ```shell
 kubectl run --image=nginx nginx-app \
   --port=80 \
@@ -76,18 +67,20 @@ kubectl describe services nginx-http
 kubectl get pods --output=wide
 ```
 
-
 ##### delete service
+
 ```shell
 kubectl delete services nginx-http
 ```
 
 ##### delete deployment
+
 ```shell
 kubectl delete deployment nginx-app
 ```
 
 ##### Ansible step, wait for kubectl to startup
+
 ```shell
 - name: Wait for kubectl to become available
   wait_for:
