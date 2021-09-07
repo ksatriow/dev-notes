@@ -44,7 +44,7 @@ kubeadm join --token $TOKEN $LOCAL_IP:6443 \
 kubectl get nodes
 ```
 
-##### run a container, verify
+### **run a container, verify**
 
 ```shell
 kubectl run --image=nginx nginx-app \
@@ -67,19 +67,19 @@ kubectl describe services nginx-http
 kubectl get pods --output=wide
 ```
 
-##### delete service
+### **delete service**
 
 ```shell
 kubectl delete services nginx-http
 ```
 
-##### delete deployment
+### **delete deployment**
 
 ```shell
 kubectl delete deployment nginx-app
 ```
 
-##### Ansible step, wait for kubectl to startup
+### **Ansible step, wait for kubectl to startup**
 
 ```shell
 - name: Wait for kubectl to become available
